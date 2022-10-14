@@ -1,0 +1,66 @@
+
+Instructions
+Read the following carefully: 
+
+ASSIGNMENT 2 INSTRUCTIONS
+
+The starting point for this assignment is your Assignment 1. 
+
+Please look at your feedback for this assignment: 
+
+Make corrections to assignment 1 before moving on to assignment 2!!!
+Create a GitHub branch for Assignment 2.
+
+The objectives for this assignment are:
+
+use javascript and built in HTML attributes to validate the input of form elements
+Step 1:
+
+Add page 3 to your site using your template. Update the nav on each page. Page 3 will have a form (in main) with JavaScript form validation. You should have these fields minimum: first and last name (type text), birth year (type number), email (type email), username (type text), password type password), reenter password (type password), and a phone number (type tel). Make sure you check lab 5 and your midterm for feedback on previous forms you've created. 
+
+Note that in some browsers using the email type adds validation for a correctly formatted email address. With type tel, we have to add the validation. Using the password type adds masking.
+
+We can add some validation with attributes. Familiarize yourself with the available form attributes in HTML5: https://www.w3schools.com/html/html_form_attributes.asp
+
+We will use these attributes: min, max, maxlength, minlength, pattern, and required. We will also use placeholder to add hints to the user about how to enter data correctly. We will also use size make our form more readable. 
+
+Add the required to username and both password fields. Test the form: can you submit without filling out the required fields? Required allows us to validate for empty data fields. 
+
+Add a size attribute to your first and last name input fields. What happens?
+
+Add a maxlength to your first and last name input fields. To test, set it to 2. What happens? Change the value back to a 50. The maxlength attribute can serve as first-line security measure. If the data from your first and last name input boxes is destined for a database field of 50 characters, then setting the maxlength to the same value is good practice. minlength ensures that a minimum number of characters is entered.
+
+Add a maxlength of 10 and a minlength of 5 to username. Add a minlength of 8 to password. 
+
+Add a min and max to your birth year input field so they can't input a year prior to 1900 or after the current year. 
+
+Add a phone number field to your form. Add a placeholder hint and implement the pattern attribute ###-###-#### using a regular expression or regex.
+
+If you need to add custom validation, you have to use JavaScript. See example here: https://www.w3schools.com/js/js_validation.asp  Note the "onsubmit" event.
+
+Add a validation function using Javascript that does the following 2 things:
+
+validates that password entered by the user and reentered password match. Note that minlength ensures it's a minimum of 8 of characters. Test thoroughly!!! Note that usually you would want to check that password meets some minimum requirements such as it includes both upper and lowercase letters and either a number or special character. In Javascript, we use regular expressions to do this. For this assignments, just make sure the password and reentered password match. 
+validates that the username isn't already taken. Create an array of existing valid usernames. Include Harry, Elizabeth, and Shana. 
+Note: You can use flags hold the result of one and two and then check those for your return.
+
+Test all your form validation again! 
+
+Commit and push your branch to Github.
+
+Submit two links: the Repl.it and the Github link into the submission box in CougarView.
+
+Grading checklist:
+
+Corrections made on Assignment 1
+Page 3 added with a form that posts to same URL as lab 5 and midterm. The form should have first and last name (type text), birth year (type number), email (type email), username (type text), password (type password), reenter password (type password), and a phone number (type tel). All set up with names to post correctly. 
+Required attribute added to only username and both password fields. 
+Size and maxlength of 50 added to first and last name
+Maxlength 10 and minlength 5 added to username
+Minlength 8 added to password
+min and max to your birth year input field so they can't input a year prior to 1900 or after the current year
+A pattern is added to the phone number field using a regex (###-###-####) Placeholder also added to provide a hint
+Form has a JavaScript validation function that validates that the password matches the reentered password AND that the username is not in the given array of usernames. Test thoroughly!!!
+All styles in CSS sheet
+All scripts in JS sheet
+Don't copy pasta!!! If you get code from somewhere you must include comments about where it came from, how it works, and any modifications you made!!!
