@@ -25,8 +25,7 @@ function renderCanvas(){
     //specifies style for drawing 
     var ctx = canvas.getContext('2d');
     ctx.font = 'Arial 18px Sans-Serif';
-    ctx.fillText("Canvas", 40, 100);
-    ctx.textBaseline = 'Top';
+    ctx.fillText("Canvas", 50, 50);
   } else {   
    // If canvas is unsupported in browser, do nothing
   }  
