@@ -46,6 +46,27 @@ th{
   font-size: 1.5em;
 }
 
+canvas
+{
+  border:1px solid white;
+  aria-label="" role="img";
+}
+svg{
+  width="400";
+  height="180";
+  rect x="50";
+  y="20";
+  rx="20";
+  ry="20";
+  width="150";
+  height="150";
+  fill: red;
+  stroke: black;
+  stroke-width:"5";
+  opacity:"0.5";
+}
+
+
 td{
   color: black;
   font-family: sans-serif;
@@ -84,21 +105,39 @@ main{
   grid-area: main;
 }
 
+
 .grid-container{
   display: grid;
   grid-template-areas:
     "header header header"
-    "menu main main"
+    "menu main aside"
     "footer footer footer";
   grid-gap: 10px;
 }
 
 li.c1{
-  background:#E9CDA5;
+  background:
+    ;
   color: white;
 }
   
 li.c2{
     background: #623412;
     color: white;
+}
+
+@media screen and (max-width: 768px) {
+    .grid-container{
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "menu menu menu"
+    "main main main"
+    "aside aside aside"
+    "footer footer footer";
+  grid-gap: 10px;
+    }
+  body{
+    background-color: #8cc2ff ;
+    }
 }

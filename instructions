@@ -2,65 +2,98 @@
 Instructions
 Read the following carefully: 
 
-ASSIGNMENT 2 INSTRUCTIONS
+ASSIGNMENT 3 INSTRUCTIONS
 
-The starting point for this assignment is your Assignment 1. 
+Your starting point for this assignment is your Assignment 2. Do NOT use Bootstrap for this assignment! 
 
-Please look at your feedback for this assignment: 
+Look at your feedback for assignment 2 and start by applying the changes listed in the feedback.
 
-Make corrections to assignment 1 before moving on to assignment 2!!!
-Create a GitHub branch for Assignment 2.
+Create a GitHub branch for Assignment 3.
 
 The objectives for this assignment are:
 
-use javascript and built in HTML attributes to validate the input of form elements
-Step 1:
+create a responsive, mobile-friendly design using media queries
+explore accessibility
+Step 1.
 
-Add page 3 to your site using your template. Update the nav on each page. Page 3 will have a form (in main) with JavaScript form validation. You should have these fields minimum: first and last name (type text), birth year (type number), email (type email), username (type text), password type password), reenter password (type password), and a phone number (type tel). Make sure you check lab 5 and your midterm for feedback on previous forms you've created. 
+First you are going to practice more CSS by modifying your site layout. Your current layout is: 
 
-Note that in some browsers using the email type adds validation for a correctly formatted email address. With type tel, we have to add the validation. Using the password type adds masking.
+Header, nav, main, footer layout
 
-We can add some validation with attributes. Familiarize yourself with the available form attributes in HTML5: https://www.w3schools.com/html/html_form_attributes.asp
+You will modify so that all pages have the following layout: 
 
-We will use these attributes: min, max, maxlength, minlength, pattern, and required. We will also use placeholder to add hints to the user about how to enter data correctly. We will also use size make our form more readable. 
+header, nav, main, aside, footer
 
-Add the required to username and both password fields. Test the form: can you submit without filling out the required fields? Required allows us to validate for empty data fields. 
+In the asides add the following:
 
-Add a size attribute to your first and last name input fields. What happens?
+Home: Add a new image; resize the image to about the size you want it to be on the screen using MS Paint or a similar program. 
+Page 1: canvas that uses javascript to draw some text: https://www.tutorialspoint.com/html5/html5_canvas.htm https://www.tutorialspoint.com/html5/canvas_text_fonts.htm
+Page 2: iframe that contains a website of your choice https://www.w3schools.com/tags/tag_iframe.asp
+Page 3: Use the <svg> element to add an svg graphic: https://www.w3schools.com/html/html5_svg.asp
+Step 2.
 
-Add a maxlength to your first and last name input fields. To test, set it to 2. What happens? Change the value back to a 50. The maxlength attribute can serve as first-line security measure. If the data from your first and last name input boxes is destined for a database field of 50 characters, then setting the maxlength to the same value is good practice. minlength ensures that a minimum number of characters is entered.
+Use media queries to offer style options for different sized viewports. Example: collapse menus or stack page elements when your site is viewed on a mobile device
 
-Add a maxlength of 10 and a minlength of 5 to username. Add a minlength of 8 to password. 
+Try out these media query examples: https://www.w3schools.com/css/css3_mediaqueries_ex.asp.
 
-Add a min and max to your birth year input field so they can't input a year prior to 1900 or after the current year. 
+Keep reading about responsive design.
 
-Add a phone number field to your form. Add a placeholder hint and implement the pattern attribute ###-###-#### using a regular expression or regex.
+https://www.w3schools.com/css/css_rwd_intro.asp
 
-If you need to add custom validation, you have to use JavaScript. See example here: https://www.w3schools.com/js/js_validation.asp  Note the "onsubmit" event.
+Create a responsive design for your site.  Add one media query to stack your page elements when the page is viewed on a phone. The original layout should be:
 
-Add a validation function using Javascript that does the following 2 things:
+header header header
 
-validates that password entered by the user and reentered password match. Note that minlength ensures it's a minimum of 8 of characters. Test thoroughly!!! Note that usually you would want to check that password meets some minimum requirements such as it includes both upper and lowercase letters and either a number or special character. In Javascript, we use regular expressions to do this. For this assignments, just make sure the password and reentered password match. 
-validates that the username isn't already taken. Create an array of existing valid usernames. Include Harry, Elizabeth, and Shana. 
-Note: You can use flags hold the result of one and two and then check those for your return.
+nav main aside
 
-Test all your form validation again! 
+footer footer footer 
 
-Commit and push your branch to Github.
+that changes when resized to:
+
+header
+
+nav
+
+main
+
+aside
+
+footer
+
+It will look like this:
+
+layout
+
+Resize your page to test the media query.
+
+Also set so the background color changes when resized.
+
+Step 3.
+
+Accessibility is a complex topic and we can't cover all the details in this class. But we can start exploring the topic and tools. Read the brief section called "What is accessibility?" on this site: https://www.w3.org/WAI/fundamentals/accessibility-intro/  and check out the accessibility tutorial on W3Schools: https://www.w3schools.com/html/html_accessibility.asp Add the following accessibility to your page: 
+
+Add the alt attribute to the image in the index. Read how to use alt tags appropriately depending on the kind of image: https://www.w3.org/WAI/tutorials/images/ Make sure you've resized your image. You don't need to load a huge image if you plan to display it small. Your users will have to load the entire thing which wastes bandwidth. This is a problem for users in areas without access to broadband internet.*
+Add a text alternative to your canvas on page 1 using an aria-label and add a role: https://pauljadam.com/demos/canvas.html*
+Add a title to your iframe and use relative sizes. 
+Add the role of img and an aria-labelledby using ids given to a title and description you add as children in the svg tag. Read about making inline SVG accessible here: https://css-tricks.com/accessible-svgs/
+Check that users can use the tab key to navigate and use your pages. We want to make sure that every element the user can interact with can be reached using the tab key. This includes links, form elements, iframes, etc. We also want to make sure that these have an order that makes sense. These both can be accomplished using the tabindex attribute. Set the tabindex attribute on some of your elements so the user can tab through your pages in a logical fashion and reach every element that the user should be able to interact with. Read about the tabindex attribute here: https://www.w3schools.com/tags/att_global_tabindex.asp  and here https://webaim.org/techniques/keyboard/tabindex 
+Note that you don't have an audio clip or video for this assignment, but you may want to add these in your project. Video and audio are complex when it comes to accessibility. There is no current standard for coding accessibility for video and audio. Ensure that sound and video are sufficient quality. Video should be captioned and provide a transcript. The transcripts should include both the text of the audio as well as a description of what's happening in the video so that anyone who can't play the video can get the video content. Audio should provide a transcript. Aria tags can also be used: https://www.w3.org/WAI/PF/HTML/wiki/Media_Alt_Technologies
+
+Test your navigation. Commit and push your branch to Github.
 
 Submit two links: the Repl.it and the Github link into the submission box in CougarView.
 
 Grading checklist:
 
-Corrections made on Assignment 1
-Page 3 added with a form that posts to same URL as lab 5 and midterm. The form should have first and last name (type text), birth year (type number), email (type email), username (type text), password (type password), reenter password (type password), and a phone number (type tel). All set up with names to post correctly. 
-Required attribute added to only username and both password fields. 
-Size and maxlength of 50 added to first and last name
-Maxlength 10 and minlength 5 added to username
-Minlength 8 added to password
-min and max to your birth year input field so they can't input a year prior to 1900 or after the current year
-A pattern is added to the phone number field using a regex (###-###-####) Placeholder also added to provide a hint
-Form has a JavaScript validation function that validates that the password matches the reentered password AND that the username is not in the given array of usernames. Test thoroughly!!!
-All styles in CSS sheet
-All scripts in JS sheet
+Corrections made on Assignment 2
+Assignment 2 is copied and modified to have header, footer and a center section with three columns (nav, main, aside)
+The asides have the following content: image in index, canvas with text drawn via javascript on page 1, iframe with website on page 2, <svg> with simple graphic on page 3
+A media query added to stack page elements on mobile (header, left column, center column, right column, footer all in a stack on a smaller screen)
+Background color also changes when resized
+Accessibility: alt tag is added to image in index
+Accessibility: aria label added to canvas
+Accessibility: iframe has title and uses relative sizing
+Accessibility: <svg> has role, aria-labelledby, title and description with ids
+Accessibility: Keyboard input works on all pages (you can use tab to get to all your elements).  Set the tabindex attribute on at least one of your elements to make sure that users can tab through in a logical way. 
 Don't copy pasta!!! If you get code from somewhere you must include comments about where it came from, how it works, and any modifications you made!!!
+You must understand all the code you turn in! It is plagiarism (academic dishonesty) to use code written by other people without proper attribution. If you use ANY code you find on the internet you MUST include a comment where it came from. You MUST understand how it works and how to modify it. You must explain in the comment how it works and any changes you made. Failure to do so will result in a 0 on the assignment and may result in an academic misconduct report. 
